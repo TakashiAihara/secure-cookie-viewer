@@ -1,6 +1,6 @@
 name: opencode-review
 
-# Reviews each PR with opencode on a free Zen model. The workflow, its model and its
+# Reviews each PR with opencode on the free Zen model named below. The workflow and its
 # permissions live in TakashiAihara/opencode-review. It is pinned to a commit because it receives
 # a secret. That repo has no tags, so Dependabot does not move the pin; update the SHA by hand.
 on:
@@ -19,5 +19,9 @@ jobs:
       pull-requests: write
       issues: write
     uses: TakashiAihara/opencode-review/.github/workflows/review.yml@02d4030e386580f58baec9885c0f3ef6403b15ae # main
+    with:
+      # Zen free tier, zero retention and not used for training (opencode Zen docs, 2026-11-19).
+      # Free models are withdrawn without notice; that shows as this job failing.
+      model: opencode/deepseek-v4.1-flash-free
     secrets:
       OPENCODE_API_KEY: ${{ secrets.OPENCODE_API_KEY }}
