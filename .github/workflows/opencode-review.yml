@@ -18,7 +18,7 @@ jobs:
       contents: read
       pull-requests: write
       issues: write
-    uses: TakashiAihara/opencode-review/.github/workflows/review.yml@02d4030e386580f58baec9885c0f3ef6403b15ae # main
+    uses: TakashiAihara/opencode-review/.github/workflows/review.yml@c15fa1615d604ea2d18d54fc8bf588895e284c27 # main
     with:
       # Zen free tier, zero retention and not used for training (opencode Zen docs, 2026-11-19).
       # Free models are withdrawn without notice; that shows as this job failing.
